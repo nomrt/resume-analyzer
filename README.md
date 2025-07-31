@@ -1,22 +1,98 @@
-# Resume Analyzer
 
-A Flask + NLP web application that compares a candidate's resume with a job description.
+# 📄 Resume Analyzer
 
-## Features
-- Resume and JD text input
-- spaCy-based keyword extraction
-- Cosine similarity scoring
-- Match percentage and keyword insights
+A Flask + spaCy web application that analyzes how well a resume matches a job description using natural language processing (NLP). Get a match percentage and discover overlapping keywords.
 
-## Setup Instructions
-```bash
-git clone <repo_url>
-cd resume-analyzer
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-python -m spacy download en_core_web_sm
-flask run
+![screenshot](docs/demo.png) <!-- Optional: add screenshot later -->
+
+---
+
+## 🚀 Features
+
+- Upload or paste resume and job description
+- Extracts and compares relevant keywords
+- Calculates a match percentage using NLP + cosine similarity
+- Responsive, clean UI for desktop and mobile
+
+---
+
+## 🛠 Tech Stack
+
+- [Python](https://www.python.org/)
+- [Flask](https://flask.palletsprojects.com/)
+- [spaCy](https://spacy.io/)
+- [scikit-learn](https://scikit-learn.org/)
+- HTML/CSS (vanilla + grid layout)
+
+---
+
+## 📦 Setup Instructions
+
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/your-username/resume-analyzer.git
+   cd resume-analyzer
+   ```
+
+2. **Create virtual environment**
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+
+3. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   python -m spacy download en_core_web_sm
+   ```
+
+4. **Run the app**
+   ```bash
+   flask run
+   ```
+
+5. **Visit in browser**
+   ```
+   http://127.0.0.1:5000
+   ```
+
+---
+
+## 📁 Project Structure
+
+```
+resume-analyzer/
+├── app.py
+├── utils.py
+├── requirements.txt
+├── .flaskenv
+├── .gitignore
+├── templates/
+│   └── index.html
+├── static/
+│   └── styles.css
+└── README.md
 ```
 
-Visit: http://127.0.0.1:5000/
+---
+
+## ✅ To-Do / Roadmap
+
+- [ ] REST API endpoint for automation
+- [ ] Word cloud visualization
+- [ ] Section-wise analysis (Skills / Education / Experience)
+- [ ] Export report as CSV or PDF
+- [ ] Deploy to Render / PythonAnywhere
+
+---
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 🙌 Acknowledgments
+
+- Built with ❤️ using [spaCy](https://spacy.io/)
+- Inspired by job seekers and recruiters wanting to bridge the skill gap
