@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume Analyzer</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📄 Resume Analyzer</h1>
+
+        <form method="POST" class="form-grid">
+            <div>
+                <label for="resume">Resume</label>
+                <textarea name="resume" id="resume" placeholder="Paste your resume here...">{{ resume_text }}</textarea>
+            </div>
+            <div>
+                <label for="job_description">Job Description</label>
+                <textarea name="job_description" id="job_description" placeholder="Paste job description here...">{{ jd_text }}</textarea>
+            </div>
+            <button type="submit">🔍 Analyze</button>
+        </form>
+
+        {% if match_score is not none %}
+        <div class="result-card">
+            <h2>✅ Match Score: {{ match_score }}%</h2>
+            <p><strong>Matched Keywords:</strong></p>
+            <ul>
+                {% for keyword in matched_keywords %}
+                    <li>{{ keyword }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <footer>
+            <p>🔧 Powered by Flask & spaCy · <a href="https://github.com/your-repo">GitHub</a></p>
+        </footer>
+    </div>
+</body>
+</html>
